@@ -1494,6 +1494,7 @@ init();
   if(min===Infinity) min=eff;
   return min;
 }
+
 function openBet(pl,isRaise,opts={}){
   editing.betCtx={street:currentStreet,id:pl.id,isRaise:!!isRaise,respond:!!opts.respond};
   const potRef = potBeforeAction(currentStreet);

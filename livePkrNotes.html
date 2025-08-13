@@ -85,7 +85,7 @@
   .nav-back::before{content:"◀";margin-right:3px}
   .nav-next::after{content:"▶";margin-left:3px}
 
-  .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;border:none solid var(--border);background:transparent ;font-size:13px}
+  .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;border:1px solid var(--border);background:transparent ;font-size:13px}
   input[type="text"],input[type="number"],select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0c1222;color:#e8ebff}
   textarea{width:100%;min-height:120px;border-radius:12px;border:1px solid var(--border);background:#0c1222;color:#e8ebff;padding:10px}
 
@@ -1483,9 +1483,6 @@ function openProfilePicker(idx){
 
 
 /* ---- App Start ---- */
-ensureProfileCategories();
-migrateProfilesShape();
-init();
 </script>
 </body>
 </html>
@@ -2456,3 +2453,4 @@ function trimZeros(x){ const s = (Math.round(x*100)/100).toFixed(2); return s.re
 </script>
 </body>
 </html>
+function escape(s){return (s||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]) || m)}
